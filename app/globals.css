@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-black text-white antialiased;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent;
+}
+
+.glow {
+  box-shadow: 0 0 80px rgba(168, 85, 247, 0.35);
+}
+
+
+/* --- Animated Gradient Background --- */
+.animated-gradient {
+  background: radial-gradient(
+      600px circle at var(--x, 50%) var(--y, 50%),
+      rgba(168, 85, 247, 0.25),
+      transparent 40%
+    ),
+    linear-gradient(120deg, #0f0f0f, #000);
+}
+
+/* Floating glow blobs */
+.glow-blob {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(168,85,247,0.45), transparent 70%);
+  filter: blur(80px);
+  animation: float 12s ease-in-out infinite;
+}
+
+.glow-blob.pink {
+  background: radial-gradient(circle, rgba(236,72,153,0.45), transparent 70%);
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-40px) translateX(30px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+/* ---------------- TYPOGRAPHY SYSTEM ---------------- */
+
+body {
+  font-family: var(--font-inter);
+  letter-spacing: -0.01em;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: var(--font-sora);
+  letter-spacing: -0.03em;
+}
+
+/* Display Headings */
+.display-xl {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.display-lg {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+/* Section Headings */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Body text */
+.body-lg {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #a1a1aa;
+}
+
+.body-md {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #a1a1aa;
+}
+
+/* Buttons */
+.btn-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
