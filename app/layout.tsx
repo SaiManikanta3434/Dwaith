@@ -1,4 +1,5 @@
 import "./globals.css";
+import type { ReactNode } from "react";
 import { Inter, Sora } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -21,20 +22,17 @@ export const metadata = {
   description: "Dwaith InfoTech – Software, Cloud & Digital Solutions",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <html lang="en" className={`${inter.variable} ${sora.variable}`}>
       <body>
-        {/* Global Navbar */}
         <Navbar />
-
-        {/* Page Content */}
         {children}
-
-        {/* Global Footer */}
         <Footer />
-
-        {/* Global Contact Modal */}
         <ContactModal />
       </body>
     </html>
