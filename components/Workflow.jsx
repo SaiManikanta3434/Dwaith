@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Sticky from "@/components/Sticky";
 
 export default function Workflow() {
   const steps = [
@@ -30,13 +31,11 @@ export default function Workflow() {
 
   return (
     <section className="relative py-32 bg-black text-white overflow-hidden">
-      
       {/* Background Glow */}
       <div className="absolute top-20 left-[-200px] w-[500px] h-[500px] bg-purple-600/30 rounded-full blur-[140px]" />
       <div className="absolute bottom-0 right-[-200px] w-[500px] h-[500px] bg-pink-600/20 rounded-full blur-[140px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-
         {/* Section Heading */}
         <h2 className="text-4xl md:text-5xl font-extrabold mb-16">
           Workflow Made Seamless <br />
@@ -46,7 +45,6 @@ export default function Workflow() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-16 items-start">
-
           {/* LEFT TABS */}
           <div className="space-y-4">
             {steps.map((step, index) => (
@@ -63,9 +61,7 @@ export default function Workflow() {
                 <span className="text-sm uppercase tracking-wide opacity-80">
                   Step {index + 1}
                 </span>
-                <h3 className="text-lg font-semibold mt-1">
-                  {step.title}
-                </h3>
+                <h3 className="text-lg font-semibold mt-1">{step.title}</h3>
               </button>
             ))}
           </div>
@@ -78,20 +74,18 @@ export default function Workflow() {
             transition={{ duration: 0.4 }}
             className="bg-zinc-900 rounded-2xl p-8 border border-white/10"
           >
-            <h3 className="text-2xl font-bold mb-4">
-              {steps[active].title}
-            </h3>
+            <h3 className="text-2xl font-bold mb-4">{steps[active].title}</h3>
 
-            <p className="text-gray-400 mb-8">
-              {steps[active].desc}
-            </p>
+            <p className="text-gray-400 mb-8">{steps[active].desc}</p>
 
             {/* AI / Visual Placeholder */}
             <div className="h-64 rounded-xl bg-gradient-to-br from-purple-600/40 to-pink-600/40 flex items-center justify-center text-white/80 text-sm">
               AI Workflow Visualization
             </div>
           </motion.div>
-
+        </div>
+        <div className="min-h-[300vh] p-20">
+          <Sticky />
         </div>
       </div>
     </section>

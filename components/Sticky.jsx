@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 export default function Sticky() {
   const items = [
-    { src: "/sticky/group.png", alt: "Group" },
-    { src: "/sticky/everything.png", alt: "Everything" },
-    { src: "/sticky/eco.png", alt: "Eco" },
-    { src: "/sticky/hassle.png", alt: "Hassle" },
+    { src: "/sticky/Dev.jpg", alt: "Group" },
+    { src: "/sticky/Tools.jpg", alt: "Everything" },
+    { src: "/sticky/Business.jpg", alt: "Eco" },
+    { src: "/sticky/Software.jpg", alt: "Hassle" },
   ];
 
   return (
